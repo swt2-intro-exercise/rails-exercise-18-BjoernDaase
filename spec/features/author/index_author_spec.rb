@@ -6,11 +6,11 @@ describe "Index author page", type: :feature do
     visit authors_path
   end
 
-  it "should have a table that displays all authors full names and their homepages (as a link)" do
+  it "should have a table that displays all authors full names (as links) and their homepages (as a link)" do
     visit authors_path
 
     Author.all.each do | author |
-      expect(page).to have_text author.name
+      expect(page).to have_link author.name, href: author_path(author)
       expect(page).to have_link author.homepage, href: author.homepage
     end
   end
