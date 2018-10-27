@@ -6,7 +6,6 @@ describe "Index author page", type: :feature do
     visit authors_path
   end
 
-
   it "should have a table that displays all authors full names and their homepages (as a link)" do
     visit authors_path
 
