@@ -1,9 +1,8 @@
-require 'rails_helper'
+describe 'Edit author page', type: :feature do
 
-describe "Edit author page", type: :feature do
-  
-  it "should render withour error" do
-    visit edit_authors_path
+   it 'should render without error' do
+    @author = FactoryBot.create :author
+    visit edit_author_path(@author)
   end
 
 end
