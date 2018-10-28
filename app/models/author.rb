@@ -5,4 +5,8 @@ class Author < ApplicationRecord
 	def name
 		first_name + " " + last_name
 	end
+
+	def author_ids
+	  authors.collect { | author | author.id }
+	end
 end
