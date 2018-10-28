@@ -11,12 +11,12 @@ describe "Index author page", type: :feature do
 
     Author.all.each do | author |
       expect(page).to have_link author.name, href: author_path(author)
-      expect(page).to have_link author.homepage, href: author.homepage
+      expect(page).to have_link author.homepage, href: author.homepageauthor
     end
   end
 
   it 'should have a link to create new author' do
-    visit authors_url
+    visit authors_path
 
     expect(page).to have_link 'here', href: new_author_path
   end
