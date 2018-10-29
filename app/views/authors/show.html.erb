@@ -13,6 +13,11 @@
   <%= @author.homepage %>
 </p>
 
+<h3>Papers</h3>
+<% @author.papers.each do | paper | %>
+  <li><%= paper.title %></li>
+<% end %>
+
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
 
